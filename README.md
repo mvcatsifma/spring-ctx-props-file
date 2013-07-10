@@ -3,4 +3,4 @@ and referencing those properties in the Spring application context.
 
 Run with:
 
-g build -Dlocation=/[fullpath]/app.properties
+gradle build -Dlocation=/[fullpath]/app.properties
