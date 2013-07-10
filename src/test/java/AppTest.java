@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import static org.junit.Assert.assertEquals;
+
 @ContextConfiguration(locations = "classpath*:/app-context.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class AppTest {
@@ -16,12 +18,17 @@ public class AppTest {
     private ValueHolder valueHolder;
 
     @Test
+    public void testFooVal(){
+        assertEquals("bar", System.getProperty("foo"));
+    }
+
+    @Test
     public void testValueHolder() throws Exception {
-        System.out.print(valueHolder.getValue());
+        assertEquals("Hello world!", valueHolder.getValue());
     }
 
     @Test
     public void testExampleProp() {
-        System.out.println(exampleProperty);
+        assertEquals("Hello world!", exampleProperty);
     }
 }

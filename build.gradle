@@ -16,4 +16,5 @@ dependencies{
 // http://forums.gradle.org/gradle/topics/how_should_i_be_handling_passing_system_properties_from_gradle_to_my_tests
 test{
   systemProperties = System.getProperties()
+  systemProperties['foo'] = 'bar'
 }
