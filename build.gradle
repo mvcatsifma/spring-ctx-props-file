@@ -1,0 +1,19 @@
+apply plugin: "java"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies{
+  compile group: 'org.springframework', name: 'spring-beans', version: '3.2.3.RELEASE'
+  compile group: 'org.springframework', name: 'spring-context', version: '3.2.3.RELEASE'
+  compile group: 'org.springframework', name: 'spring-test', version: '3.2.3.RELEASE'
+
+  testCompile group: 'junit', name: 'junit', version: '4.8.2'
+}
+
+// Pass all system properties to Test JVM, see:
+// http://forums.gradle.org/gradle/topics/how_should_i_be_handling_passing_system_properties_from_gradle_to_my_tests
+test{
+  systemProperties = System.getProperties()
+}
